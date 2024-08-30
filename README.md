@@ -4,27 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple PHP App</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to My PHP App</h1>
-
-        <form method="post" action="index.php">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <button type="submit">Submit</button>
-        </form>
-
-        <?php
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $name = $_POST['name'];
-                echo "<p>Hello, $name!</p>";
-            }
-        ?>
+        <p>This is a simple PHP application with HTML, CSS, and JavaScript.</p>
+        <button onclick="displayMessage()">Click Me</button>
+        <p id="message"></p>
     </div>
-
-    <script src="script.js"></script>
+    
+    <script>
+        function displayMessage() {
+            document.getElementById('message').innerHTML = "Hello, this is JavaScript in action!";
+        }
+    </script>
+    
+    <?php
+        echo "<p>This is a message from the server-side PHP script.</p>";
+    ?>
 </body>
 </html>
